@@ -1,0 +1,34 @@
+(function() {
+try {
+    (function(){
+/**/
+
+})();
+(function() {
+    try {
+        if (document.getElementById('mm_sync_back_ground'))
+           return;
+        var frm = document.createElement('iframe');
+        frm.style.visibility = 'hidden';
+        frm.style.display = 'none';
+        frm.src = "https://pixel.mathtag.com/sync/iframe?mt_uuid=87975ca4-e8fb-4700-a9ac-38cc4d998684&no_iframe=1&mt_adid=223223";
+        frm.setAttribute("id", "mm_sync_back_ground");
+
+        if (document.body)
+            document.body.appendChild(frm);
+        else
+            if (document.head)
+                document.head.appendChild(frm);
+    }
+    catch(ex)
+    {
+        document.createElement("img").src="//pixel.mathtag.com/error/img?error_domain=synciframe&what="+encodeURIComponent(ex.message);
+    }
+})();
+
+}
+catch(ex)
+{
+   document.createElement("img").src="//pixel.mathtag.com/error/img?error_domain=wrap_js&what="+encodeURIComponent(ex.message);
+}
+})();
