@@ -171,6 +171,9 @@ header .header_container{
     grid-row: 1;
 
 }
+.projeto {
+    text-decoration: none;
+}
 .projeto .descricao-projeto-texto{
     padding: 1rem;
     background: rgba(0, 0, 0, 50%);
@@ -199,7 +202,8 @@ header .header_container{
     grid-row: 2;
 }
 .lista-de-projetos li:nth-child(2) .projeto{
-    background-color: purple;
+    background-image: url(/img/calculadora-ipv4.jpg);
+    background-size: cover;
     
 }
 .lista-de-projetos li:nth-child(3){
