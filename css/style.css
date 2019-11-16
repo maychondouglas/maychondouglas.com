@@ -1,18 +1,12 @@
-﻿/*
-Escala de Cores: 
-#011627 - MAASTRICHT BLUE
-#FDFFFC - BABY POWDER
-#DBF9F4 - AZUREISH WHITE
-#F06449 - TOMATO
-#BF211E - FIREBRICK
-*/
-
-
-*{
+﻿*{
     margin: 0%;
     padding: 0%;
     font-family: Helvetica, sans-serif;
     font-size: 16px;
+    --primary-color: rgb(234, 245, 252);
+    --secondary-color: rgb(135, 198, 255);
+    --terceary-color: rgb(176, 105, 138);
+    --default-color: rgb(20, 18, 68);
 
 }
 
@@ -21,7 +15,7 @@ body{
     background-color:rgb(137, 249, 213);
     background:  url("/img/background.jpg");
     background-repeat: no-repeat;
-    background-color: #F06449;
+    background-color: var(--primary-color);
 
     background-size: 100% 35rem;
 }
@@ -129,10 +123,10 @@ header .header_container{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: #F06449;
-    color: #011627;
-    font-weight: bolder;
-    padding: 0.5rem;
+    background-color: var(--terceary-color);
+
+    font-weight: 530;
+    padding: 0.4rem;
     margin: 0.2rem;
     cursor: default;
 }
@@ -142,10 +136,6 @@ header .header_container{
 .atribuicoes ul li p{
     margin: 0 0.5rem;
 }
-.atribuicoes ul li:hover{
-    color: white;
-    transition: all 0.5s;
-}
 .apresentacao{
 
     min-height: 25rem;
@@ -154,7 +144,7 @@ header .header_container{
 
 /*################# PROJETOS #####################*/
 .projetos{
-    background: #DBF9F4;
+    background: var(--terceary-color);
     padding: 3rem 3rem;
 }
 .lista-de-projetos {
@@ -181,8 +171,8 @@ header .header_container{
 }
 .projetos .identificador{
     
-    color: #011627;
-    border-color: #011627;
+    color: var(--default-color);
+    border-color: var(--default-color);
     justify-content: flex-start;
 }
 .lista-de-projetos li .projeto{
@@ -237,23 +227,28 @@ header .header_container{
 
 
 }
+
 .mais-projetos{
     width: 100%;
     height: 1rem;
+    text-decoration: none;
+    color: white;
+    
 }
-.botao {
+.botao{
     display: flex;
     
     justify-content: center;
-    background-color: #011627;
+    background-color: var(--default-color);
     padding: 1rem;
     text-decoration: none;
-    color: #DBF9F4;
+    color: whitesmoke;
     font-weight: bold;
     
 }
 .botao:hover{
-    background-color: #BF211E;
+    background-color: var(--primary-color);
+    color: var(--default-color);
     transition: all 0.3s;
 }
 
@@ -262,9 +257,10 @@ header .header_container{
 
 
 
+
 /*################# VERTENTES #####################*/
 .ideais{
-    background-color: #F06449;
+    background-color: var(--primary-color);
     padding: 3rem;
     display: flex;
 
@@ -272,7 +268,7 @@ header .header_container{
 .identificador{
     grid-column: 1/13;
     grid-row: 1;
-    color: #BF211E;
+    color:  var(--terceary-color);
     display: flex;
     justify-content: center;
     
@@ -280,21 +276,21 @@ header .header_container{
     font-size: 1.5rem;
     font-weight: bold;
     padding: 0.5rem;
-    border-bottom: solid 2px #BF211E;
+    border-bottom: solid 2px  var(--terceary-color);
     margin-bottom: 1rem;
 }
 .vertentes_container .identificador{
     grid-column: 1/13;
     grid-row: 1;
-    color: #BF211E;
+    color:  var(--terceary-color);
     display: flex;
-    justify-content: ;
+
     width: 100%;
     align-items: flex-start;
     font-size: 1.5rem;
     font-weight: bold;
     padding: 0.5rem;
-    border-bottom: solid 2px #BF211E;
+    border-bottom: solid 2px var(--terceary-color);
 }
 .vertentes_container{
     list-style: none; 
@@ -311,12 +307,12 @@ header .header_container{
     display: flex;
     font-size: 5rem;
     padding: 0.5rem;
-    color: #BF211E;
+    color: var(--terceary-color);
 }
 
 .vertentes_container li section{
     margin: 1rem;
-    color: #011627;
+    color:  var(--terceary-color);
 
 }
 .vertentes_container li:nth-child(1){
@@ -350,12 +346,12 @@ header .header_container{
 
     display: flex;
     justify-content: flex-start;
-    color: #011627;
+    color:  var(--terceary-color);
 }
 .vertentes_container li section p{
     display: flex;
     text-align: start;
-    color: #011627;
+    color:  var(--terceary-color);
 }
 
 
@@ -363,13 +359,13 @@ header .header_container{
 .vertentes{
     padding: 3rem 3rem;
 
-    background-color: #011627;
+    background-color: var(--default-color);
 }
 .texto1{
     grid-column: 1/7;
     display: flex;
     flex-direction: row;
-    color: rgb(137, 249, 213);
+    color: var(--terceary-color);
     align-items: flex-start;
 
 
@@ -402,29 +398,29 @@ header .header_container{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    color: rgb(137, 249, 213);
+    color: var(--terceary-color);
 
     
 }
 .texto1 h2{
-    color: #DBF9F4;
+    color: var(--primary-color);
     margin-bottom: 0.3rem;
 }
 .texto2 h2{
-    color: #DBF9F4;
+    color: var(--primary-color);
     margin-bottom: 0.3rem;
 }
 /*################# GALERIA DE IMAGENS #####################*/
 .galeria-principal{
     padding: 3rem 3rem;
-    background-color: #F06449;
+    background-color: var(--secondary-color);
 
 
 
 }
 .galeria .identificador{
-    color: #DBF9F4;
-    border-color:  #DBF9F4;
+    color: var(--default-color);
+    border-color:  var(--default-color);
     justify-content: flex-start;
 }
 .galeria .imagem-com-texto{
@@ -448,20 +444,16 @@ header .header_container{
 }
 .imagem-com-texto .texto-texto{
     margin: 0.5rem;
-    color: #DBF9F4;
+    color: var(--default-color);
 }
 .imagem-com-texto2 .texto-texto{
     
     margin: 0.5rem;
-    color: #DBF9F4;
+    color: var(--default-color);
 }
 .imagem-com-texto2 .texto-texto span{
-    color: #BF211E;
+    color: var(--default-color);
     font-weight: bold;
-}
-.imagem-com-texto2 .texto-texto span:hover{
-    color: #011627;
-    
 }
 .imagem-imagem{
     
@@ -497,7 +489,7 @@ header .header_container{
 
 #left-mobile{
     font-size: 3rem;
-    color: rgb(17, 104, 114);
+    color: var(--default-color);
 
 
     cursor: pointer;
@@ -507,7 +499,7 @@ header .header_container{
 }
 #left-mobile i{
     font-size: 2rem ;
-    color: #BF211E;
+    color:  var(--default-color);
     background-color: #FDFFFC;
     border-radius: 80rem;
     padding: 0.2rem;
@@ -534,14 +526,14 @@ header .header_container{
 }
 #right-mobile{
     font-size: 3rem;
-    color: #BF211E;
+    color:  var(--default-color);
     cursor: pointer;
     display: none;
     padding: 1rem;
 }
 #right i{
     font-size: 2rem;
-    color: #BF211E;
+    color:  var(--default-color);
     cursor: pointer;
     background-color: #FDFFFC;
     border-radius: 80rem;
@@ -551,7 +543,7 @@ header .header_container{
 }
 #left i{
     font-size: 2rem;
-    color: #BF211E;
+    color:  var(--default-color);
     background-color: #FDFFFC;
     border-radius: 80rem;
     padding: 0.2rem;
@@ -572,12 +564,15 @@ footer{
 }
 .contato{
     width: 100%;
+    
 }
 .contato .identificador{
     justify-content: flex-start;
     align-self: baseline;
     grid-column: 1/13;
     grid-row: 1;
+    color: var(--secondary-color);
+    border-bottom-color:  var(--secondary-color);
 
 }
 .campo{
@@ -587,7 +582,7 @@ footer{
     padding: 0.5rem;
     font-weight: bold;
     border-style: solid;
-    border-color: #BF211E;
+    border-color: var(--secondary-color);
 
 }
 .nome{
@@ -608,20 +603,21 @@ footer{
  
     
 }
-.botao{
+form .botao{
    
-    color: #DBF9F4;
+    color: var(--primary-color);
     border-color: transparent;
     font-weight: bold;
 }
 .enviar{
-    background-color: #BF211E;
+    background-color: var(--secondary-color);
     grid-column: 1/4;
     grid-row: 4;
     display: flex;
 }
 .enviar:hover{
-    background-color: #011627;;
+    background-color: var(--terceary-color);
+    color: var(--primary-color);
 }
 
 
@@ -634,10 +630,10 @@ footer{
 
 /*################# RODAPÉ ####################*/
 .rodape{
-    background-color: #011627;
+    background-color: var(--default-color);
     width: 100%;
     text-align: center;
-    color: #DBF9F4;
+    color: var(--primary-color);
     padding: 0.5rem 0;
     margin-bottom: auto;
     
