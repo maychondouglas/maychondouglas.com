@@ -107,7 +107,7 @@ header .logo h1{
     grid-row: 2;
 }
 .lista-de-projetos li:nth-child(2) .projeto{
-    background-image: url(/calculadora-ipv4.jpg);
+    background-image: url(calculadora-ipv4.jpg);
     background-size: cover;
     
 }
