@@ -24,7 +24,7 @@
             <p class="doFormulario">Para calcular uma rede Ipv4 com Classe precisamos saber do Ipv4, favor digite o Endereço de Ipv4 abaixo:</p>
             <form class="doFormulario formulario">
                 <input id="campoip" type="text" placeholder="ex.: 126.10.10.10">
-                <input type="text" placeholder="ex.: /8 ou 255.0.0.0">
+                <input id="campoMascara" type="text" placeholder="ex.: /8 ou 255.0.0.0">
                 <a id="calcular" class="btn btn-calcular">Calcular</a>
                 <span id="mensagem-erro"></span>
             </form>
@@ -32,7 +32,7 @@
             <h3  class="doFormulario">Informações da Rede</h3>
            
             <h5 class="doFormulario">Ipv4 digitado: <span id="ipdigitado">126.10.10.10</span></h5>
-            <h5 class="doFormulario">Classe: <span id="ipclasse">A</span></h5>
+            <h5 id="campoClasse" class="doFormulario">Classe: <span id="ipclasse">A</span></h5>
             <h5 class="doFormulario">Mascara Notacao Decimal: <span id="ipmaskdec">255.0.0.0</span> Mascara Notacao CIDR: <span id="ipmaskcidr">/8</span></h5>
             <h5 class="doFormulario">Número de Hosts do Bloco: <span id="ipnumhosts">16777214</span></h5>
             <h5 class="doFormulario">IP de Rede: <span id="iprede">126.0.0.0</span> IP de Broadcast: <span id="ipbroadcast">126.255.255.255</span></h5>
@@ -40,6 +40,8 @@
         </main>
 </body>
 <script>
+
+    var controle = 0;
     var campoIP = document.getElementById('campoip');
 
     var mainPrincipal = document.querySelector('main');
@@ -67,6 +69,8 @@
 
     
     ipv4ComClasse.addEventListener('click', function(){
+        controle = 1;
+        document.getElementById('campoClasse').style.display = "block";
         document.querySelector('main').style.display = "block";
         tituloPagina.innerHTML = 'COM CLASSE';
         
@@ -85,6 +89,7 @@
     });
     
     inicio.addEventListener('click', function(){
+        controle = 0;
         tituloPagina.innerHTML = 'CALCULADORA';
         document.querySelector('main').style.display = "none";
          
@@ -104,6 +109,8 @@
     });
     
     ipv4SemClasse.addEventListener('click', function(){
+        controle = 2;
+        document.getElementById('campoClasse').style.display = "none";
         document.querySelector('main').style.display = "block";
         
         tituloPagina.innerHTML = 'SEM CLASSE';
@@ -128,76 +135,361 @@
             mensagemDeErro.innerHTML = "O Endereço IP digitado é inválido! Digite um Ip Válido";
 
         }else{
-            mensagemDeErro.innerHTML = "";
-            var x = vetor[0];
-            var y = vetor[1];
-            var z = vetor[2];
-            var classe = "";
-            var mascaraDecimal = "";
-            var mascaraCIDR = 0;
-            var numeroDeHosts = 0;
-            var enderecoRede = [x, y, z, 0];
-            var enderecoBroadcast = [x, y, z, 255];
-            var primeiroEnderecoUtilizavel = [x, 0, 0, 1];
-            var ultimoEnderecoUtilizavel =[x, 255, 255, 254];
-            
-            if(vetor[0]<=127){
-                classe = "A";
-                mascaraDecimal = "255.0.0.0";
-                mascaraCIDR = 8;
-                var teste = (32-mascaraCIDR);
-                numeroDeHosts = Math.pow(2, teste) - 2;
-                enderecoRede[1] = 0;
-                enderecoRede[2] = 0;
-                enderecoRede[3] = 0;
-                enderecoBroadcast[1] = 255;
-                enderecoBroadcast[2] = 255;
-                enderecoBroadcast[3] = 255;
-            }else{
-                if(vetor[0]<=191){
-                    classe = "B";
-                    mascaraDecimal = "255.255.0.0";
-                    mascaraCIDR = 16;
+            if(controle == 1){
+                
+                mensagemDeErro.innerHTML = "";
+                var x = vetor[0];
+                var y = vetor[1];
+                var z = vetor[2];
+                var classe = "";
+                var mascaraDecimal = "";
+                var mascaraCIDR = 0;
+                var numeroDeHosts = 0;
+                var enderecoRede = [x, y, z, 0];
+                var enderecoBroadcast = [x, y, z, 255];
+                var primeiroEnderecoUtilizavel = [x, 0, 0, 1];
+                var ultimoEnderecoUtilizavel =[x, 255, 255, 254];
+                
+                if(vetor[0]<=127){
+                    classe = "A";
+                    mascaraDecimal = "255.0.0.0";
+                    mascaraCIDR = 8;
                     var teste = (32-mascaraCIDR);
                     numeroDeHosts = Math.pow(2, teste) - 2;
+                    enderecoRede[1] = 0;
                     enderecoRede[2] = 0;
                     enderecoRede[3] = 0;
+                    enderecoBroadcast[1] = 255;
                     enderecoBroadcast[2] = 255;
                     enderecoBroadcast[3] = 255;
-                    primeiroEnderecoUtilizavel[1] = y;
-                    ultimoEnderecoUtilizavel[1] = y;
                 }else{
-                    if(vetor[0]<=223){
-                    classe = "C";
-                    mascaraDecimal = "255.255.255.0";
-                    mascaraCIDR = 24;
-                    var teste = (32-mascaraCIDR);
-                    numeroDeHosts = Math.pow(2, teste) - 2;
-                    primeiroEnderecoUtilizavel[1] = y;
-                    primeiroEnderecoUtilizavel[2] = z;
-                    ultimoEnderecoUtilizavel[1] = y;
-                    ultimoEnderecoUtilizavel[2] = z;
+                    if(vetor[0]<=191){
+                        classe = "B";
+                        mascaraDecimal = "255.255.0.0";
+                        mascaraCIDR = 16;
+                        var teste = (32-mascaraCIDR);
+                        numeroDeHosts = Math.pow(2, teste) - 2;
+                        enderecoRede[2] = 0;
+                        enderecoRede[3] = 0;
+                        enderecoBroadcast[2] = 255;
+                        enderecoBroadcast[3] = 255;
+                        primeiroEnderecoUtilizavel[1] = y;
+                        ultimoEnderecoUtilizavel[1] = y;
                     }else{
-                        if(vetor[0]<=239){
-                            classe = "D";
+                        if(vetor[0]<=223){
+                        classe = "C";
+                        mascaraDecimal = "255.255.255.0";
+                        mascaraCIDR = 24;
+                        var teste = (32-mascaraCIDR);
+                        numeroDeHosts = Math.pow(2, teste) - 2;
+                        primeiroEnderecoUtilizavel[1] = y;
+                        primeiroEnderecoUtilizavel[2] = z;
+                        ultimoEnderecoUtilizavel[1] = y;
+                        ultimoEnderecoUtilizavel[2] = z;
                         }else{
-                            classe = "E";
+                            if(vetor[0]<=239){
+                                classe = "D";
+                            }else{
+                                classe = "E";
+                            }
                         }
                     }
                 }
+            classeCampo.innerHTML = classe;
+            maskDecimal.innerHTML = mascaraDecimal;
+            maskCIDR.innerHTML = mascaraCIDR;
+            ipNumHosts.innerHTML = numeroDeHosts;
+            ipDeRede.innerHTML = enderecoRede[0] + '.' + enderecoRede[1] + '.' + enderecoRede[2] + '.' + enderecoRede[3];
+            ipDeBroadcast.innerHTML = enderecoBroadcast[0] + '.' + enderecoBroadcast[1] + '.' + enderecoBroadcast[2] + '.' + enderecoBroadcast[3];
+            primeiroIp.innerHTML = primeiroEnderecoUtilizavel[0] + '.' + primeiroEnderecoUtilizavel[1] + '.' + primeiroEnderecoUtilizavel[2] + '.' + primeiroEnderecoUtilizavel[3];
+            ultimoIp.innerHTML =  ultimoEnderecoUtilizavel[0] + '.' + ultimoEnderecoUtilizavel[1] + '.' + ultimoEnderecoUtilizavel[2] + '.' + ultimoEnderecoUtilizavel[3];
+            
+            }else{
+                mensagemDeErro.innerHTML = "";
+                
+                if(controle == 2){//sem classe
+
+                    document.getElementById('campoClasse').style.display = "none";
+                    var vetorMascara = campoMascara.value.split("");
+                    if(vetorMascara[0] == "/"){//mascara na notacao CIDR
+                        var mascaraCidr = parseInt((vetorMascara[1])+((vetorMascara[2]!=null)?vetorMascara[2]:""));
+                        if(mascaraCidr>=32 || mascaraCidr == 0){
+                            mensagemDeErro.innerHTML = "Mascara Inválida";
+                        }else{
+
+                                //GERANDO A MASCARA em BINARIO PARA PASSAR PARA NOTACAO DECIMAL
+                                //
+                                var vetorIp = campoIP.value.split(".");
+                                var x = vetorIp[0];
+                                var y = vetorIp[1];
+                                var z = vetorIp[2];
+                                var t = vetorIp[3];
+                                var cidr = mascaraCidr;
+                                var mascaraInvertida = [];
+                                var mascaraBinario = [];
+                                for(let i = 0; i<32; i++){
+                                    if(i<cidr){
+                                        mascaraBinario[i] = 1;
+                                        mascaraInvertida[i] = 0;
+                                    }else{
+                                        mascaraBinario[i] = 0;
+                                        mascaraInvertida[i] = 1;
+                                    }
+                                }
+                                /////PASSANDO MASCARA PARA DECIMAL
+                                var xM = parseInt(converterParaDecimal(mascaraBinario, 0));
+                                var yM = parseInt(converterParaDecimal(mascaraBinario, 8));
+                                var zM = parseInt(converterParaDecimal(mascaraBinario, 16));
+                                var tM = parseInt(converterParaDecimal(mascaraBinario, 24));
+                                
+                                //CALCULANDO A MASCARA INVERTIDA;
+                                
+                                var xB = parseInt(x, 10).toString(2);
+                                var yB = parseInt(y, 10).toString(2);
+                                var zB = parseInt(z, 10).toString(2);
+                                var tB = parseInt(t, 10).toString(2);
+                                
+                                
+                                
+                                var ipBinario = [];
+                                
+                                for(let i = 0, j = 0; i < 32; i++, j++){
+                                    if(i == 8 || i == 16 || i == 24){
+                                        j = 0;
+                                    }
+                                    
+                                    //UNINDO OS 4 VETORES DO IP BINARIO EM UM UNICO VETOR DE 32 BITS
+                                    if(i < 8){
+                                            ipBinario[i] = xB[j];
+                                        }
+                                        else{
+                                            if(i <16) {
+                                                ipBinario[i] = yB[j];
+                                            }
+                                            else{
+                                                if(i < 24){
+                                                    ipBinario[i] = zB[j];
+                                                }else{
+                                                    ipBinario[i] = tB[j];
+                                                }
+                                            }
+                                        }
+                                }
+                                
+                                //FAZER OPERAÇÃO OR ENTRE O IP E A MASCARA NEGADA(INVERTIDA) PARA OBTER O BROADCAST
+                                var ipBroadcast = [];
+                                for(let i = 0; i<32; i++){
+                                    ipBroadcast[i] = (mascaraInvertida[i] | ipBinario[i]);
+                                }
+                                
+                                
+                                var broadcastX = 0, broadcastY = 0, broadcastZ = 0, broadcastT = 0;
+                                broadcastX = converterParaDecimal(ipBroadcast, 0);
+                                broadcastY = converterParaDecimal(ipBroadcast, 8);
+                                broadcastZ = converterParaDecimal(ipBroadcast, 16);
+                                broadcastT = converterParaDecimal(ipBroadcast, 24); 
+                                
+                                //NUMERO DE HOST'S DESCONTANDO REDE E BROADCAST
+                                var numeroDeHosts = Math.pow(2, 32 - cidr) - 2 ;
+                                
+                                //PARA ENCONTRAR O ENDERECO DE REDE UTILIZAREI A OPERACAO AND ENTRE O ENDERECO E A MASCARA DECIMAL
+                                var enderecoRede = [x & xM, y & yM, z & zM, t & tM];
+                                
+                                //PARA ENCONTRAR O PRIMEIRO ENDERECO DO BLOCO UTILIZAVEL, SOMA-SE 1 NO ULTIMO OCTETO DO ENDERECO DE REDE
+                                var primeiroEnderecoUtilizavel = [x & xM, y & yM, z&zM, (t&tM)+1];
+
+                                document.getElementById('ipdigitado').innerHTML = campoIP.value;
+                                maskDecimal.innerHTML = xM + '.' + yM +  '.' + zM + '.' + tM;
+                                maskCIDR.innerHTML = "/" + cidr;
+                                ipNumHosts.innerHTML = numeroDeHosts;
+                                ipDeRede.innerHTML = enderecoRede[0] + '.' + enderecoRede[1] + '.' + enderecoRede[2] + '.' + enderecoRede[3];
+                            
+                                ipDeBroadcast.innerHTML = broadcastX + '.' + broadcastY + '.' + broadcastZ + '.' + broadcastT;
+                                primeiroIp.innerHTML = primeiroEnderecoUtilizavel[0] + '.' + primeiroEnderecoUtilizavel[1] + '.' + primeiroEnderecoUtilizavel[2] + '.' + primeiroEnderecoUtilizavel[3];
+                                ultimoIp.innerHTML = broadcastX + '.' + broadcastY + '.' + broadcastZ + '.' + parseInt(broadcastT-1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        }
+                    }else{ //mascara na notacao Decimal
+                            var vetorMascaraDecimal = campoMascara.value.split(".");
+                            var mascaraDecimal = campoMascara.value;
+                            var xM = vetorMascaraDecimal[0];
+                            var yM = vetorMascaraDecimal[1];
+                            var zM = vetorMascaraDecimal[2];
+                            var tM = vetorMascaraDecimal[3]; 
+
+                            var vetorIp = campoIP.value.split(".");
+                            var x = vetorIp[0];
+                            var y = vetorIp[1];
+                            var z = vetorIp[2];
+                            var t = vetorIp[3];   
+                            //TRANSFORMANDO A MASCARA EM BINARIO, PARA IDENTIFICAR A NOTACAO EM CIDR
+                            var xMB = parseInt(xM, 10).toString(2);
+                            var yMB = parseInt(yM, 10).toString(2);
+                            var zMB = parseInt(zM, 10).toString(2);
+                            var tMB = parseInt(tM, 10).toString(2);
+                            
+                            var xB = parseInt(x, 10).toString(2);
+                            var yB = parseInt(y, 10).toString(2);
+                            var zB = parseInt(z, 10).toString(2);
+                            var tB = parseInt(t, 10).toString(2);
+                            
+                            //UNINDO OS VETORES IP E MASCARA BINARIA EM UM SO VETOR, CALCULANDO A MASCARA INVERTIDA, CALCULANDO A MASCARA CIDR;
+                            var mascaraBinaria = [], mascaraInvertida = [], p = 0, ipBinario = [];
+                            for(let i = 0; i<8; i++){
+                                //MASCARA
+                                mascaraBinaria[i] = xMB[i];
+                                
+                                //IP
+                                ipBinario[i] = xB[i];
+                                        
+                                //CALCULANDO MASCARA CIDR
+                                if(mascaraBinaria[i]==0 && mascaraBinaria[i-1]==1){
+                                    p = i;
+                                }
+                                
+                                //GERANDO MASCARA INVERTIDA
+                                if(xMB[i]==1) { 
+                                    mascaraInvertida[i]=0;
+                                    }
+                                else {
+                                    mascaraInvertida[i]=1;
+                                    }
+                                    
+                                
+                            }
+       
+                            for(let i = 8, j = 0; j< 8; i++, j++){
+                                //MASCARA
+                                mascaraBinaria[i] = yMB[j];
+                                //IP
+                                ipBinario[i] = yB[j];
+                                
+                                //CALCULANDO MASCARA CIDR
+                                if(mascaraBinaria[i]==0 && mascaraBinaria[i-1]==1){
+                                    p = i;
+                                }
+                                
+                                //GERANDO MASCARA INVERTIDA
+                                if(yMB[j]==1) {mascaraInvertida[i]=0;}
+                                else {mascaraInvertida[i]=1;}
+                                
+                            }
+
+                            for(let i = 16, j = 0; j < 8; i++, j++){
+                                //MASCARA 
+                                mascaraBinaria[i] = zMB[j];
+                                //IP
+                                ipBinario[i] = zB[j];
+                                
+                                //CALCULANDO MASCARA EM CIDR
+                                if(mascaraBinaria[i]==0 && mascaraBinaria[i-1]==1){
+                                    p = i;
+                                }
+                                
+                                //GERANDO MASCARA INVERTIDA
+                                if(zMB[j]==1) {mascaraInvertida[i]=0;}
+                                else { mascaraInvertida[i]=1;}
+                                
+                            }
+
+                            for(let i = 24, j = 0; j < 8; i++, j++){
+                                
+                                //MASCARA
+                                mascaraBinaria[i] = tMB[j];
+                                
+                                //IP
+                                ipBinario[i] = tB[j];
+                                
+                                //CALCULANDO MASCARA EM CIDR
+                                if(mascaraBinaria[i]==0 && mascaraBinaria[i-1]==1){
+                                    p = i;
+                                }
+                                
+                                //GERANDO MASCARA INVERTIDA
+                                if(tMB[j]==1) {
+                                    mascaraInvertida[i]=0;
+                                    }else {
+                                        mascaraInvertida[i]=1;
+                                    }
+                                   
+                            }
+ 
+                     
+                            
+                            //FAZER OPERAÇÃO OR ENTRE O IP E A MASCARA NEGADA(INVERTIDA) PARA OBTER O BROADCAST
+                            var ipBroadcast = [];
+                            for(let i = 0; i<32; i++){
+                                ipBroadcast[i] = ((mascaraInvertida[i]) | (ipBinario[i]));
+                            }
+                            
+                            
+                            var broadcastX = 0, broadcastY = 0, broadcastZ = 0, broadcastT = 0;
+                            broadcastX = converterParaDecimal(ipBroadcast, 0);
+	                        broadcastY = converterParaDecimal(ipBroadcast, 8);
+	                        broadcastZ = converterParaDecimal(ipBroadcast, 16);
+	                        broadcastT = converterParaDecimal(ipBroadcast, 24); 
+                            //MASCARA CIDR
+                            var mascaraCIDR = p;
+                            
+                            //CALCULANDO NUMERO DE HOSTS
+                            var numeroDeHosts = Math.pow(2, (32-mascaraCIDR))-2;
+                            
+                            //PARA ENCONTRAR O ENDERECO DE REDE UTILIZAREI A OPERACAO AND ENTRE O ENDERECO E A MASCARA DECIMAL
+                            var enderecoRede = [x & xM, y & yM, z & zM, t & tM];
+                            
+                            //PARA ENCONTRAR O PRIMEIRO ENDERECO DO BLOCO UTILIZAVEL, SOMA-SE 1 NO ULTIMO OCTETO DO ENDERECO DE REDE
+                            var primeiroEnderecoUtilizavel= [x & xM, y&yM, z&zM, (t&tM)+1];
+
+
+
+                            document.getElementById('ipdigitado').innerHTML = campoIP.value;
+                            maskDecimal.innerHTML = mascaraDecimal;
+                            maskCIDR.innerHTML = mascaraCIDR;
+                            ipNumHosts.innerHTML = numeroDeHosts;
+                            ipDeRede.innerHTML = enderecoRede[0] + '.' + enderecoRede[1] + '.' + enderecoRede[2] + '.' + enderecoRede[3];
+                        
+                            ipDeBroadcast.innerHTML = broadcastX + '.' + broadcastY + '.' + broadcastZ + '.' + broadcastT;
+                            primeiroIp.innerHTML = primeiroEnderecoUtilizavel[0] + '.' + primeiroEnderecoUtilizavel[1] + '.' + primeiroEnderecoUtilizavel[2] + '.' + primeiroEnderecoUtilizavel[3];
+                            ultimoIp.innerHTML = broadcastX + '.' + broadcastY + '.' + broadcastZ + '.' + parseInt(broadcastT-1);
+                    }
+                } 
             }
-        classeCampo.innerHTML = classe;
-        maskDecimal.innerHTML = mascaraDecimal;
-        maskCIDR.innerHTML = mascaraCIDR;
-        ipNumHosts.innerHTML = numeroDeHosts;
-        ipDeRede.innerHTML = enderecoRede[0] + '.' + enderecoRede[1] + '.' + enderecoRede[2] + '.' + enderecoRede[3];
-        ipDeBroadcast.innerHTML = enderecoBroadcast[0] + '.' + enderecoBroadcast[1] + '.' + enderecoBroadcast[2] + '.' + enderecoBroadcast[3];
-        primeiroIp.innerHTML = primeiroEnderecoUtilizavel[0] + '.' + primeiroEnderecoUtilizavel[1] + '.' + primeiroEnderecoUtilizavel[2] + '.' + primeiroEnderecoUtilizavel[3];
-        ultimoIp.innerHTML =  ultimoEnderecoUtilizavel[0] + '.' + ultimoEnderecoUtilizavel[1] + '.' + ultimoEnderecoUtilizavel[2] + '.' + ultimoEnderecoUtilizavel[3];
         }
 
     });
-    
+    function  converterParaDecimal(ipBroadcast, inicio){
+	
+	//CONVERTER BINARIO DE 8 BITS PARA DECIMAL
+	var j = inicio+7; 
+	var inteiro = 0;
+	
+	for(var i = 0; i < 8; i++){
+		
+		if(ipBroadcast[j] == 1 ){
+			
+			inteiro += Math.pow(2, i);
+		}
+		
+		j--;
+	}
+	
+	return inteiro;
+}
     
 
 
