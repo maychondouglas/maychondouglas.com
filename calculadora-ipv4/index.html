@@ -244,10 +244,10 @@
                                 
                                 //CALCULANDO A MASCARA INVERTIDA;
                                 
-                                var xB = parseInt(x, 10).toString(2);
-                                var yB = parseInt(y, 10).toString(2);
-                                var zB = parseInt(z, 10).toString(2);
-                                var tB = parseInt(t, 10).toString(2);
+                                var xB = convertendoParaBinario(x);
+                                var yB = convertendoParaBinario(y);
+                                var zB = convertendoParaBinario(z);
+                                var tB = convertendoParaBinario(t);
                                 
                                 
                                 
@@ -327,26 +327,27 @@
                     }else{ //mascara na notacao Decimal
                             var vetorMascaraDecimal = campoMascara.value.split(".");
                             var mascaraDecimal = campoMascara.value;
-                            var xM = vetorMascaraDecimal[0];
-                            var yM = vetorMascaraDecimal[1];
-                            var zM = vetorMascaraDecimal[2];
-                            var tM = vetorMascaraDecimal[3]; 
-
-                            var vetorIp = campoIP.value.split(".");
-                            var x = vetorIp[0];
-                            var y = vetorIp[1];
-                            var z = vetorIp[2];
-                            var t = vetorIp[3];   
-                            //TRANSFORMANDO A MASCARA EM BINARIO, PARA IDENTIFICAR A NOTACAO EM CIDR
-                            var xMB = parseInt(xM, 10).toString(2);
-                            var yMB = parseInt(yM, 10).toString(2);
-                            var zMB = parseInt(zM, 10).toString(2);
-                            var tMB = parseInt(tM, 10).toString(2);
+                            var xM = parseInt(vetorMascaraDecimal[0]);
+                            var yM = parseInt(vetorMascaraDecimal[1]);
+                            var zM = parseInt(vetorMascaraDecimal[2]);
+                            var tM = parseInt(vetorMascaraDecimal[3]); 
                             
-                            var xB = parseInt(x, 10).toString(2);
-                            var yB = parseInt(y, 10).toString(2);
-                            var zB = parseInt(z, 10).toString(2);
-                            var tB = parseInt(t, 10).toString(2);
+                            var vetorIp = campoIP.value.split(".");
+                            var x = parseInt(vetorIp[0]);
+                            var y = parseInt(vetorIp[1]);
+                            var z = parseInt(vetorIp[2]);
+                            var t = parseInt(vetorIp[3]);  
+                            
+                            //TRANSFORMANDO A MASCARA EM BINARIO, PARA IDENTIFICAR A NOTACAO EM CIDR
+                            var xMB = convertendoParaBinario(xM);
+                            var yMB = convertendoParaBinario(yM);
+                            var zMB = convertendoParaBinario(zM);
+                            var tMB = convertendoParaBinario(tM);
+                            
+                            var xB = convertendoParaBinario(x);
+                            var yB = convertendoParaBinario(y);
+                            var zB = convertendoParaBinario(z);
+                            var tB = convertendoParaBinario(t);
                             
                             //UNINDO OS VETORES IP E MASCARA BINARIA EM UM SO VETOR, CALCULANDO A MASCARA INVERTIDA, CALCULANDO A MASCARA CIDR;
                             var mascaraBinaria = [], mascaraInvertida = [], p = 0, ipBinario = [];
@@ -428,14 +429,16 @@
                                     }
                                    
                             }
+                            
  
                      
                             
                             //FAZER OPERAÇÃO OR ENTRE O IP E A MASCARA NEGADA(INVERTIDA) PARA OBTER O BROADCAST
                             var ipBroadcast = [];
                             for(let i = 0; i<32; i++){
-                                ipBroadcast[i] = ((mascaraInvertida[i]) | (ipBinario[i]));
+                                ipBroadcast[i] = (mascaraInvertida[i] | ipBinario[i]);
                             }
+                           
                             
                             
                             var broadcastX = 0, broadcastY = 0, broadcastZ = 0, broadcastT = 0;
@@ -489,6 +492,21 @@
 	}
 	
 	return inteiro;
+}
+function  convertendoParaBinario(number){
+	var x = number;
+	var b = [];
+	for(let i = 7; i >= 0 ; i--){
+
+        if(x >= 1){
+            b[i] = parseInt(x%2);
+            x = parseInt(x / 2);
+        }
+        else{
+            b[i] = 0;
+        }
+    }
+	return b;
 }
     
 
