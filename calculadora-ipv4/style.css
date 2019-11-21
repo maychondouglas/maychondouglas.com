@@ -12,7 +12,7 @@ body{
     
 }
 main{
-    background-image: url(/redes.jpg);
+    background-image: url(redes.jpg);
     background-size: cover;
     height: 95vh;
     padding: 2rem;
