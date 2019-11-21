@@ -1,13 +1,13 @@
 
 
-    var controle = 0;
+    var controle = 1;
     var campoIP = document.getElementById('campoip');
     var campoMascara = document.getElementById('campoMascara');
     var ipv4ComClasse = document.getElementById('comClasse');
     var ipv4SemClasse = document.getElementById('semClasse');
     var mensagemDeErro = document.getElementById('mensagem-erro');
     /*Elementos de Resultado (spans)*/
-    var classeCampo = document.getElementById('campoClasse');
+    var classeCampo = document.getElementById('ipclasse');
     
     var maskDecimal = document.getElementById('ipmaskdec');
     var maskCIDR = document.getElementById('ipmaskcidr');
@@ -20,15 +20,19 @@
     ipv4ComClasse.addEventListener('click', function(){
         mensagemDeErro.innerHTML = "";
         controle = 1;
-        document.getElementById('campoClasse').style.display = "block";
+        document.getElementById('campoClasse').style.display = "flex";
         document.querySelector('main').style.display = "block";
         
         campoMascara.style.display = "none";
         document.querySelector('#comClasse').classList.add('tipoAcionado');
         document.querySelector('#semClasse').classList.remove('tipoAcionado');
+        document.querySelector('.informacoes').style.visibility = "hidden";
+        document.querySelector('.doFormulario').style.visibility = "hidden";
     });
     
     ipv4SemClasse.addEventListener('click', function(){
+        document.querySelector('.informacoes').style.visibility = "hidden";
+        document.querySelector('.doFormulario').style.visibility = "hidden";
         mensagemDeErro.innerHTML = "";
         controle = 2;
         document.getElementById('campoClasse').style.display = "none";
@@ -47,7 +51,9 @@
             mensagemDeErro.innerHTML = "O Endereço IP digitado é inválido! Digite um Ip Válido";
         }else{
             if(controle == 1){
-                
+                document.getElementById('ipdigitado').innerHTML = campoIP.value;
+                document.querySelector('.informacoes').style.visibility = "visible";
+                document.querySelector('.doFormulario').style.visibility = "visible";
                 mensagemDeErro.innerHTML = "";
                 var x = vetor[0];
                 var y = vetor[1];
@@ -106,6 +112,8 @@
                         }
                     }
                 }
+                document.getElementById('ipdigitado').innerHTML = campoIP.value;
+            
             classeCampo.innerHTML = classe;
             maskDecimal.innerHTML = mascaraDecimal;
             maskCIDR.innerHTML = mascaraCIDR;
@@ -119,6 +127,8 @@
                 mensagemDeErro.innerHTML = "";
                 
                 if(controle == 2){//sem classe
+                    document.querySelector('.informacoes').style.visibility = "visible";
+                    document.querySelector('.doFormulario').style.visibility = "visible";
                     
                     
                     var vetorMascara = campoMascara.value.split("");
@@ -218,6 +228,8 @@
                                 ultimoIp.innerHTML = broadcastX + '.' + broadcastY + '.' + broadcastZ + '.' + parseInt(broadcastT-1);
                         }
                     }else{ //mascara na notacao Decimal
+                            document.querySelector('.informacoes').style.visibility = "visible";
+                            document.querySelector('.doFormulario').style.visibility = "visible";
                             var vetorMascaraDecimal = campoMascara.value.split(".");
                             if(vetorMascaraDecimal.length != 4 || vetorMascaraDecimal[0] > 255 || vetorMascaraDecimal[1] > 255 || vetorMascaraDecimal[2] > 255 || vetorMascaraDecimal[3] > 255 || vetorMascaraDecimal[0] <=0 || vetorMascaraDecimal[1] < 0 || vetorMascaraDecimal[2] < 0 || vetorMascaraDecimal[3] < 0){
                                 mensagemDeErro.innerHTML = "A Máscara digitada é inválida! Digite uma Máscara Válida";
