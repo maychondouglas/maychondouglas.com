@@ -1,4 +1,4 @@
-﻿*{
+*{
     margin: 0%;
     padding: 0%;
     font-family: Helvetica, sans-serif;
@@ -201,7 +201,8 @@ header .header_container{
     grid-row: 2;
 }
 .lista-de-projetos li:nth-child(3) .projeto{
-    background-color: grey;
+    background-image: url(/img/formulario.jpg);
+    background-size: cover;
 
 }
 .lista-de-projetos li:nth-child(4){
@@ -294,6 +295,7 @@ header .header_container{
 }
 .vertentes_container{
     list-style: none; 
+    
 
 }
 .vertentes_container li{
@@ -301,12 +303,13 @@ header .header_container{
     justify-content: center;
     align-items: center;
 
+
     
 }
 .vertentes_container li i{
     display: flex;
     font-size: 5rem;
-    padding: 0.5rem;
+    padding: 1rem;
     color: var(--terceary-color);
 }
 
@@ -324,6 +327,7 @@ header .header_container{
     grid-column: 1/5;
     grid-row: 2;
 }
+
 .vertentes_container li:nth-child(3){
     display: flex;
     flex-direction: row;
@@ -693,9 +697,9 @@ form .botao{
 
     .vertentes_container{
         display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+        justify-content: flex-start;
+        align-items: flex-start;
+        
     }
     .vertentes_container li{
         display: flex;
@@ -704,6 +708,13 @@ form .botao{
         text-align: center;
         flex-direction: column;
     }
+    .vertentes_container li:nth-child(3) i{
+        margin: 0rem;
+        padding: 0.3rem;
+        font-size: 4rem;
+
+    }
+    
     #right{
         display: none;
     }
