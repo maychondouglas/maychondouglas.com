@@ -3,6 +3,7 @@
 var selecionarCurso = document.getElementById("selecionar-curso")
 
 var objetos = [
+    {"value":0, "nome":'SELECIONE O SEU CURSO...', "dia": 0, "mes":"0", "link":"0"}, 
     {"value":1, "nome":'ADMINISTRAÇÃO', "dia": 13, "mes":"FEVEREIRO", "link":"grupo1"}, 
     {"value":2, "nome":'AGRONOMIA', "dia": 15, "mes":"FEVEREIRO", "link":"grupo3"}, 
     {"value":3, "nome":'ARQUITETURA E URBANISMO', "dia": 20, "mes":"FEVEREIRO", "link":"grupo4"}, 
@@ -36,7 +37,6 @@ selecionarCurso.addEventListener('change', function(){
         document.querySelector(".dia-calendario").innerHTML = objetos[value=indice].dia;
         document.querySelector(".mes-calendario").innerHTML = objetos[value=indice].mes;
         document.querySelector(".sel h4").style.display = "none";
-        document.querySelector(".inscricao").setAttribute("href", objetos[value=indice].link);
     }
     
 });
@@ -44,7 +44,7 @@ selecionarCurso.addEventListener('change', function(){
 var selecionarPergunta = document.querySelector(".select-duvida");
 
 var duvidas = [
-    {"value":1, "nome":"QUANTOS CONVIDADOS PODEREI LEVAR?", "resposta":"NÃO LIMITAMOS A QUANTIDADE DE CONVIDADOS POIS O TEATRO ONDE SERÃO REALIZADAS AS COLAÇÕES DE GRAU POSSUI GRANDE NÚMERO DE ASSENTOS."},
+    {"value":1, "nome":"QUANTOS CONVIDADOS ASDSPODEREI LEVAR?", "resposta":"NÃO LIMITAMOS A QUANTIDADE DE CONVIDADOS POIS O TEATRO ONDE SERÃO REALIZADAS AS COLAÇÕES DE GRAU POSSUI GRANDE NÚMERO DE ASSENTOS."},
     {"value":2, "nome":"QUANTOS CONVIDADOS PODEREI LEVAR?", "resposta":"NÃO LIMITAMOS A QUANTIDADE DE CONVIDADOS POIS O TEATRO ONDE SERÃO REALIZADAS AS COLAÇÕES DE GRAU POSSUI GRANDE NÚMERO DE ASSENTOS."},
     {"value":3, "nome":"DESEJO PARTICIPAR DA COLAÇÃO EXTRAORDINÁRIA, O QUE FAZER?", "resposta":"is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the"},
     {"value":4, "nome":"QUANTOS CONVIDADOS PODEREI LEVAR?", "resposta":"NÃO LIMITAMOS A QUANTIDADE DE CONVIDADOS POIS O TEATRO ONDE SERÃO REALIZADAS AS COLAÇÕES DE GRAU POSSUI GRANDE NÚMERO DE ASSENTOS."},
@@ -53,6 +53,9 @@ var duvidas = [
 ];
 
 carregarComboBox(duvidas, selecionarPergunta);
+
+var indice = selecionarPergunta.options[selecionarPergunta.selectedIndex].value;
+document.querySelector(".resposta").innerHTML = duvidas[value=indice].resposta;
 
 selecionarPergunta.addEventListener('change', function(){
     var indice = selecionarPergunta.options[selecionarPergunta.selectedIndex].value;
