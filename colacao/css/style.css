@@ -1,0 +1,463 @@
+*{
+    margin: 0;
+    padding: 0;;
+}
+body{
+    font-family: 'Signika', sans-serif;
+    --primary-color: rgb(00, 80, 190);
+    --secondary-color: rgb(250, 210, 0);
+    --terceary-color: rgb(255, 90, 20);
+    --quartenary-color: #333;
+    font-size: 16px;
+    background-color: aliceblue;
+    color: var(--quartenary-color);
+}
+
+.orientacoes p{
+    color: var(--quartenary-color);
+    line-height: 1.3;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 20px;
+}
+header{
+    background-color: var(--terceary-color);
+    padding: 0.5rem;
+}
+
+a{
+    text-decoration: none;
+}
+.link-site{
+    grid-column: 1/2;
+    color: rgba(240, 230, 71);
+}
+.link-telefone{
+    grid-column: 2/4;
+    color: white;
+
+}
+.uni{
+    grid-column: 7/13;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+}
+main{
+    background-image: url("../img/fundo.png");
+    background-size: cover;
+    height: 75vh;
+    background-attachment: fixed;
+}
+main .entrada{
+    margin: 0 auto;
+    max-width: 1000px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;  
+}
+main .entrada h1 a{
+    display: flex;
+    margin-top: 5vh;
+}
+main .entrada p{
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    max-width: 40rem;
+    margin-top: 18vh;
+    line-height: 1.1;
+   
+}
+.selecao{
+    width: 100%;
+    height: auto;
+}
+.selection{
+    max-width: 1000px;
+    height: auto;
+    background-color: var(--secondary-color);
+    margin: 0 auto;
+    padding: 2rem;
+    margin-top: -8%;
+}
+.sel h2{
+    grid-column: 1/7;
+    grid-row: 1;
+    color: var(--quartenary-color);
+
+}
+.sel h4{
+    grid-column: 7/13;
+    grid-row: 1/3;
+    padding: 0.5rem;
+    color: var(--primary-color);
+
+}
+.link-whatsapp{
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.link-whatsapp:hover{
+    color: var(--terceary-color);
+}
+footer{
+    background-color: var(--terceary-color);
+    display: flex;
+}
+footer p{
+    margin: 0 auto;
+    color: white;
+    padding: 0.5rem;
+}
+h2{
+    color: var(--primary-color);
+}
+.select{
+    border-radius: 100px;
+    font-family: 'Signika', sans-serif;;
+    border-style: solid;
+    border-width: 2.5px;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: transparent;
+    max-height: 4rem;
+    -webkit-appearance: none;
+}
+/*Selecao do Curso*/
+.select-curso{
+    grid-column: 1/7;
+    grid-row: 2;
+    color:var(--quartenary-color);
+    border-color: var(--quartenary-color);
+    background: url(../img/arrow-blue.svg) no-repeat right 1rem center;
+    background-size: auto 20px;   
+}
+.dinamico{
+    grid-column: 7/13;
+    grid-row: 1/4;
+    display: none;
+
+}
+.calendario{
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    background-color: var(--primary-color);
+    transition: linear 500ms;
+}
+.dia-calendario{
+    display: flex;
+    width: 100%;
+    height: 75%;
+    color: var(--quartenary-color);
+    background-color: white;
+    font-size: 5rem;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+.mes-calendario{
+    background-color: var(--terceary-color);
+    color: var(--secondary-color);
+    display: flex;
+    height: 25%;
+    font-size: 1.3rem;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+}
+.lado{
+    padding: 1rem;
+    color: var(--quartenary-color);
+}
+.lado h5{
+    color: white;
+    max-width: 18rem;
+}
+.bottom{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 100px;
+    margin-top: 0.2rem;
+    font-weight: bold;
+    box-shadow: black;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    
+}
+.bottom:hover{
+    background-color: var(--terceary-color);
+}
+
+.orientacoes{
+    padding-bottom: 3rem;
+}
+.requerimento{
+    grid-column: 1/7;
+}
+.requerimento div i{
+    font-size: 3rem;
+}
+.cerimonia{
+    grid-column: 7/13;
+}
+.cerimonia div i{
+    font-size: 3rem;
+}
+.bloco-title{
+    display: flex;
+    color: var(--primary-color);
+    align-items: center;
+}
+.bloco-title h2{
+    margin-left: 0.5rem;
+}
+.info{
+    margin-top: 3rem;
+}
+.bloco p{
+    margin-top: 1rem;
+    padding-right: 1rem;
+}
+.select-duvida{
+    border-color: white;
+
+}
+.duvidas{
+    background-color: var(--terceary-color);
+    width: 100%;
+    height: auto;
+}
+.duvidas .container{
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.duvidas .duvidas-duvidas {
+    padding: 2rem;
+}
+.duvidas .duvidas-duvidas h2{
+    grid-row: 1;
+    grid-column: 1/13;
+    color: white;
+}
+.duvidas .duvidas-duvidas .select{
+    grid-row: 2;
+    grid-column: 1/9;
+    overflow: hidden;
+    color: white;
+    background: url(../img/arrow-white.svg) no-repeat right 1rem center;
+    background-size: auto 20px;
+}
+.duvidas .duvidas-duvidas .select option{
+    background-color: white;
+    color: grey;
+}
+.duvidas .duvidas-duvidas h4 {
+    grid-column: 1/9;
+    grid-row: 3;
+    color: var(--secondary-color);
+    font-weight: normal;
+   
+    border-radius: 100px;
+    padding: 0.5rem;
+}
+
+.duvidas .duvidas-duvidas img{
+    grid-column: 9/13;
+    grid-row: 1/4;
+}
+.galeria .container{
+   grid-template-rows: 1fr 5fr 1fr;
+}
+.galeria .fotos h2{
+    grid-column: 1/13;
+    grid-row: 1;
+
+
+    display: flex;
+    align-items: flex-end;
+    
+}
+.fotos{
+    height: 25rem;
+    padding-top: 1rem;
+}
+.foto{
+   
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;    
+}
+.foto1{
+    grid-column: 1/5;
+    grid-row: 2;
+    background-image: url(../img/colacao1.jpg);
+}
+.foto2{
+    grid-column: 5/9;
+    background-image: url(../img/colacao2.jpg);
+    grid-row: 2;
+}
+.foto3{
+    grid-column: 9/13;
+    grid-row: 2;
+    background-image: url(../img/colacao3.jpg);
+}
+.link-foto{
+    background-color: rgba(103, 32, 232, 70%);
+    color: white;
+    padding: 1rem;
+    max-height: 25%;
+}
+
+.contato{
+    height: 30vh;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.contato .assinatura{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.contato .assinatura h3{
+    font-size: 25px;
+    margin: 0.5rem 0;
+}
+.contato .assinatura h2{
+    margin: 0 1rem;
+}
+.contato .assinatura .contatos{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+}
+
+.contatos a{
+    font-size: 25px;
+}
+.contatos a:hover{
+    color: var(--primary-color);
+}
+@media(max-width: 1100px){
+    main{
+        height: 30rem;
+    }
+    main .entrada{
+        max-width: 1000px;
+        padding: 2rem;
+    }
+    main .entrada p{
+        margin-top: 15vh;
+    }
+    .orientacoes{
+        padding: 2rem 2rem;
+    }
+    .link-telefone{
+        grid-column: 2/5;    
+    }
+    .uni{
+        grid-column: 5/13;
+    }
+    .link-foto{
+        padding: 0.5rem;
+        max-height: 35%;
+       
+    }
+    .selecao .selection .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .selecao .selection .sel .dinamico{
+        margin: 1.5rem 0;
+    }
+    .selecao .selection .sel  h2{
+        margin: 1rem 0;
+    }
+    .galeria{
+        padding: 0rem 2rem;
+    }
+    .duvidas-duvidas img{
+        width: 250px;
+    }
+  
+}
+
+@media(max-width: 850px){
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    header .container .uni{
+        display: none;
+    }
+    
+    .galeria{
+        height: auto;
+        padding: 1rem;
+    }
+    .link-foto{
+        padding: 0.5rem;
+        height: auto;
+        width: 100%;
+       
+    }
+    .duvidas-duvidas img{
+        margin: 1rem auto;
+    }
+    .fotos{
+        padding-top: 1rem;
+        display: flex;
+        height: auto;
+        flex-wrap: wrap;
+    }
+    .foto{
+        height: 20rem;
+        
+        margin-bottom: 1.5rem;
+        background-size: contain;
+        background-attachment: fixed;
+        
+    }
+    .contato .assinatura h2{
+        display: none;
+    }
+    .contato .assinatura .contatos{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .contato .assinatura{
+        margin: 2rem 0;
+    }
+    .contato{
+        height: auto;
+    }
+    
+}
+@media(min-width: 1500px){
+    main .entrada p{
+        margin-top: 2.5vh;
+        
+    }
+}
