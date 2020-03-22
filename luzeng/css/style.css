@@ -8,10 +8,12 @@
     --quase-branco: rgb(248,248,248);
     --cinza-escuro: rgb(20,27,38);
     scroll-behavior: smooth;
+    
 }
 body{
     height: 150rem;
     scroll-behavior: smooth;
+    
 }
 .cabecalho{
     height: 3rem;
@@ -29,6 +31,7 @@ header{
     
     margin: 0 auto;
     max-width: 1140px;
+    overflow:hidden
 }
 .email{
     grid-column: 1/7;
@@ -528,7 +531,7 @@ main::after{
     font-size: 20px;
     font-weight: 100;
     text-align: end;
-    max-width: 30rem;
+
 
 }
 .identificador{
@@ -612,7 +615,7 @@ main::after{
     font-size: 16px;
     font-weight: 400;
     text-align: start;
-    max-width: 30rem;
+    max-width: 40vw;
 
 }
 .contato{
@@ -787,17 +790,12 @@ footer a:hover{
         display: flex;
         color: var(--quase-branco);
         height: 100%;
-        width: auto;
         justify-content: center;
         align-self: center;
         cursor: pointer;
         
     }
-    .icon-menu-mobile i{
-        font-size: 50px;
 
-        
-    }
     .barra-menu .container{
         flex-direction: row;
         justify-content: space-between;
@@ -836,7 +834,7 @@ footer a:hover{
         width: 20rem;
     }
     .equipe-socios{
-        align-items: flex-start;
+        align-items: center;
     }
     .sobre{
         display: flex;
@@ -924,9 +922,54 @@ footer a:hover{
     }
     .feedback{
         display: flex;
+        
     }
     .apresentacao{
         margin-top: 23rem;
     }
 
+}
+@media(max-width: 700px){
+    .feedback{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .foto-pessoa-feedback{
+        order: 1;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    .dados-feedback{
+        order: 2;
+        justify-content: center;
+        align-items: center;
+    }
+    #textoFeedback{
+        text-align: center;
+    }
+    #feedback-right{
+        position: absolute;
+        right: 0;
+    }
+    #feedback-left{
+
+        position: absolute;
+        left: 0;
+    }
+    .aspas{
+        display: none;
+    }
+    #titulo-sobre{
+        margin-top: 2rem;
+    }
+    .sobre-ancoras ul li a{
+        font-size: 30px;
+    }
+    .sobre-circulo{
+        margin-top: -8rem;
+    }
+    #digitar{
+        font-size: 38px;
+    }
 }
