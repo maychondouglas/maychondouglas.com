@@ -239,7 +239,7 @@ var contatoMenu = document.getElementById("contato-menu");
 
 
 function  fecharMenu(){
-    menuMobileDiv.style.right = "-30%";
+    menuMobileDiv.style.right = "-50%";
 }
     
 
