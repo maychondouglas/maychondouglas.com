@@ -503,7 +503,7 @@ main::after{
 }
 .foto-pessoa-feedback{
     height: 12rem;
-    width: 12rem;
+    min-width: 12rem;
     background-image: url("../img/homem.jpg");
     background-size: cover;
     background-position: center;
@@ -963,13 +963,33 @@ footer a:hover{
     #titulo-sobre{
         margin-top: 2rem;
     }
+    #texto-sobre{
+        font-size: 23px;
+    }
     .sobre-ancoras ul li a{
         font-size: 30px;
     }
     .sobre-circulo{
         margin-top: -8rem;
+        margin-left: 1rem;
     }
     #digitar{
         font-size: 38px;
+    }
+    .identificador h2{
+        font-size: 30px;
+    }
+    .identificador p{
+        font-size: 20px;
+    }
+    p, a{
+        font-size: 20px;
+    }
+    .apresentacao p span{
+        font-size: 23px;
+    }
+    .apresentacao{
+        height: 25rem;
+        justify-content: flex-end;
     }
 }
