@@ -218,7 +218,7 @@ botaoMenu.addEventListener("click", function(){
     menuMobileDiv.style.right = "0";
 });
 fecharMenuMobile.addEventListener("click", function(){
-    menuMobileDiv.style.right = "-30%";
+    menuMobileDiv.style.right = "-50%";
 });
 
 /*Menu Deslocando de acordo com o Srcoll*/
