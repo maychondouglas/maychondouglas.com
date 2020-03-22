@@ -76,7 +76,7 @@
 
             }, 150);
             
-        }, 400)
+        }, 1000)
         
     }
 
@@ -100,9 +100,9 @@
     });
 
     var arraySobre = [
-    {id:0, tituloSobre:"MISSÃO", textoSobre:"Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum é o texto fictício padrão do setor desdeLorem ctício padrão do setor desde1", srcImagem:"/img/mission.svg"},
-    {id:1, tituloSobre:"VALORES", textoSobre:"Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum é o texto fictício padrão do setor desdeLorem ctício padrão do setor desde2", srcImagem:"/img/mission.svg"},
-    {id:2, tituloSobre:"VISÃO", textoSobre:"Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum é o texto fictício padrão do setor desdeLorem ctício padrão do setor desde3", srcImagem:"/img/mission.svg"}
+    {id:0, tituloSobre:"MISSÃO", textoSobre:"Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum é o texto fictício padrão do setor desdeLorem ctício padrão do setor desde1", srcImagem:"../img/mission.svg"},
+    {id:1, tituloSobre:"VALORES", textoSobre:"Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum é o texto fictício padrão do setor desdeLorem ctício padrão do setor desde2", srcImagem:"../img/valores.svg"},
+    {id:2, tituloSobre:"VISÃO", textoSobre:"Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão. Lorem Ipsum é o texto fictício padrão do setor desdeLorem ctício padrão do setor desde3", srcImagem:"../img/visao.svg"}
     ];
 
     var titulo = document.querySelector("#titulo-sobre");
