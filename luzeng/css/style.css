@@ -283,6 +283,9 @@ main::after{
     margin: 2rem;
     color: var(--azul-escuro);
 }
+.deslize{
+    display: none;
+}
 .link-servico:hover{
     color: var(--cinza-escuro);
 }
@@ -861,7 +864,7 @@ footer a:hover{
     }
     .menu-mobile-lista{
         position: fixed;
-        width: 50%;
+        width: 30%;
         height: 100%;
         z-index: 1000000;
         background-color: var(--cinza-escuro);
@@ -926,6 +929,15 @@ footer a:hover{
     }
     .apresentacao{
         margin-top: 23rem;
+    }
+    .deslize{
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+    }
+    .deslize p{
+        margin: 0 1rem;
     }
 
 }
