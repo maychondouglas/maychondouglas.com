@@ -162,8 +162,8 @@
 
     var arrayFeedbacks = 
     [
-        {id:0, nomeFeedback:"HELENA", sobrenomeFeedback:"FERREIRA DE LIMA", textFeedback:"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard1", srcFeedback:"/img/mulher.jpg"},
-        {id:1, nomeFeedback:"PEDRO", sobrenomeFeedback:"GONLCALVES PEREIRA", textFeedback:"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard2", srcFeedback:"/img/homem.jpg"},
+        {id:0, nomeFeedback:"HELENA", sobrenomeFeedback:"FERREIRA DE LIMA", textFeedback:"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard1", srcFeedback:"img/mulher.jpg"},
+        {id:1, nomeFeedback:"PEDRO", sobrenomeFeedback:"GONLCALVES PEREIRA", textFeedback:"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard2", srcFeedback:"img/homem.jpg"},
     ];
 
     var divFotoFeedback = document.querySelector(".foto-pessoa-feedback");
