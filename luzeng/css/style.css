@@ -864,7 +864,7 @@ footer a:hover{
     }
     .menu-mobile-lista{
         position: fixed;
-        width: 30%;
+        width: 50%;
         height: 100%;
         z-index: 1000000;
         background-color: var(--cinza-escuro);
