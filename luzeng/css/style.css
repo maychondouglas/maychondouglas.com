@@ -31,7 +31,7 @@ header{
     
     margin: 0 auto;
     max-width: 1140px;
-    overflow:hidden
+    /*overflow:hidden*/
 }
 .email{
     grid-column: 1/7;
