@@ -338,6 +338,7 @@ main::after{
     grid-column: 1/7;
     color: var(--azul-escuro);
     padding-left: 2.5rem;
+    margin-top: 1rem;
 }
 .mvv-conteudo h3{
     font-size: 20px;
@@ -348,7 +349,7 @@ main::after{
     font-size: 25px;
     font-weight: 200;
     transition: linear 500ms;
-    margin-top: 1rem;
+    
 
 
 }
