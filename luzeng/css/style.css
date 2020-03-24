@@ -348,6 +348,7 @@ main::after{
     font-size: 25px;
     font-weight: 200;
     transition: linear 500ms;
+    margin-top: 1rem;
 
 
 }
