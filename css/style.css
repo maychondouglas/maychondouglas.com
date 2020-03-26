@@ -190,7 +190,7 @@ header .header_container{
     grid-row: 2;
 }
 .lista-de-projetos li:nth-child(2) .projeto{
-    background-image: url(/img/calculadora-ipv4.jpg);
+    background-image: url("../img/calculadora-ipv4.jpg");
     background-size: cover;
     
 }
@@ -199,7 +199,7 @@ header .header_container{
     grid-row: 2;
 }
 .lista-de-projetos li:nth-child(3) .projeto{
-    background-image: url(/img/formulario.jpg);
+    background-image: url("../img/formulario.jpg");
     background-size: cover;
 
 }
@@ -232,23 +232,23 @@ header .header_container{
     height: 1rem;
     text-decoration: none;
     color: white;
-	display: none;
+
     
 }
 .botao{
     display: flex;
     
     justify-content: center;
-    background-color: var(--default-color);
+    background-color: var(--secondary-color);
     padding: 1rem;
     text-decoration: none;
-    color: whitesmoke;
+    color: var(--default-color);
     font-weight: bold;
     
 }
 .botao:hover{
-    background-color: var(--primary-color);
-    color: var(--default-color);
+    background-color: var(--default-color);
+    color: var(--secondary-color);
     transition: all 0.3s;
 }
 
