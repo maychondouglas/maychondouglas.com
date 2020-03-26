@@ -224,7 +224,7 @@
             
             <input name="nome" class="campo nome" type="text" placeholder="Digite seu nome...">
             <input name="email" class="campo email" type="email" placeholder="example@email.com">
-            <input name="telefone" class="campo telefone" type="tel" placeholder="(62) 9 9999-9999">
+            <input name="telefone" id="telefone" class="campo telefone" type="tel" placeholder="(62) 9 9999-9999">
             <input name="mensagem" class="campo mensagem" type="text" placeholder="Digite sua mensagem...">
             <button class="botao enviar" type="submit">Enviar</button>
         </form>
@@ -233,45 +233,8 @@
         
     </footer>
     <section class="rodape">
-        Desenvolvido por mim mesmo ;)
+        <p> Desenvolvido por mim mesmo ;)</p>
     </section>
 </body>
-<script>
-    var esquerda = document.querySelector('#left i');
-    var direita = document.querySelector('#right i');
-    var imagem1 = document.querySelector('.imagem1');
-    var esquerda_m = document.querySelector('#left-mobile i');
-    var direita_m = document.querySelector('#right-mobile i');
-    var count = 0;
-    function avancarGaleria($i){
-        if($i<=13){
-            imagem1.style.backgroundImage = "URL(/img/".concat($i+1).concat(".jpg)");
-            count+=1;
-        }else{
-            count=0;
-            avancarGaleria(count);
-        }
-    }
-    function voltarGaleria($i){
-        if($i>=4){
-            imagem1.style.backgroundImage = "URL(/img/".concat($i-1).concat(".jpg)");
-            count-=1;
-        }else{
-            count=13;
-            avancarGaleria(count);
-        }
-    }
-    esquerda.addEventListener('click', function(){
-        avancarGaleria(count);
-    });
-    direita.addEventListener('click', function(){
-        voltarGaleria(count);
-    });
-    esquerda_m.addEventListener('click', function(){
-        avancarGaleria(count);
-    });
-    direita_m.addEventListener('click', function(){
-        avancarGaleria(count);
-    });
-</script>
+<script type="text/javascript" src="js/javascript.js"></script>
 </html>

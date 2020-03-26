@@ -3,11 +3,11 @@
     padding: 0%;
     font-family: 'Signika', sans-serif;
     font-size: 16px;
-    --primary-color: #EAFDF8;
-    --secondary-color: #FFCA3A;
-    --terceary-color: #F46036;
-    --quartenary-color: #F5FDC6;
-    --default-color: #540D6E;
+    --primary-color: #D9F0FF;
+    --secondary-color: #CCDBDC;
+    --terceary-color: #46351D;
+    --quartenary-color: #A3D5FF;
+    --default-color: #102542;
 
 }
 
@@ -15,6 +15,7 @@
 body{
     background-color: var(--primary-color);
     background:  url("/img/background.jpg");
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-color: var(--primary-color);
 
@@ -56,7 +57,7 @@ header .header_container{
     
 }
 .redes-sociais ul li a{
-    color: #FDFFFC;
+    color: var(--secondary-color);
     padding: 0.1rem;
     justify-items: center;
 }
@@ -67,7 +68,7 @@ header .header_container{
     font-size: 2rem;
 }
 .redes-sociais ul li a i:hover{
-    color: #BF211E;
+    color: var(--quartenary-color);
     transition: all 1s;
 }
 
@@ -107,10 +108,6 @@ header .header_container{
     
     border-width: 1rem;
 }  
-.pessoal .imagem img:hover{
-    border-color: #FDFFFC;
-    transition: all 1s;
-}
 
 .atribuicoes ul{
     list-style: none;
@@ -172,8 +169,8 @@ header .header_container{
 }
 .projetos .identificador{
     
-    color: var(--default-color);
-    border-color: var(--default-color);
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
     justify-content: flex-start;
 }
 .lista-de-projetos li .projeto{
@@ -430,8 +427,8 @@ header .header_container{
     margin: 0 auto;
 }
 .lista-de-clientes .identificador{
-    color: var(--default-color);
-    border-color:  var(--default-color);
+    color: var(--terceary-color);
+    border-color:  var(--terceary-color);
     display: flex;
     width: 100%;
     height: 1.8rem;
@@ -502,13 +499,14 @@ header .header_container{
     
     margin-top: 1rem ;
     margin-bottom: 1rem ;   
-    justify-content: center; 
+    justify-content: center;
+     
 
 }
 .imagem-imagem img{
     height: 11rem;
     width: 13rem;
-  
+    
 
     
 
@@ -524,6 +522,9 @@ header .header_container{
     align-items: flex-end;
     background-repeat: no-repeat;
     background-size: cover;
+    transition: background 0.3s ease;
+  
+
 }
 
 
@@ -601,6 +602,7 @@ footer{
     height: 40vh;
     flex-direction: column;
     padding: 3rem 3rem;
+    background-color: var(--quartenary-color)
 }
 .contato{
     width: 100%;
@@ -611,8 +613,8 @@ footer{
     align-self: baseline;
     grid-column: 1/13;
     grid-row: 1;
-    color: var(--secondary-color);
-    border-bottom-color:  var(--secondary-color);
+    color: var(--default-color);
+    border-bottom-color:  var(--default-color);
 
 }
 .campo{
@@ -622,7 +624,7 @@ footer{
     padding: 0.5rem;
     font-weight: bold;
     border-style: solid;
-    border-color: var(--secondary-color);
+    border-color: transparent;
 
 }
 .nome{
@@ -650,7 +652,7 @@ form .botao{
     font-weight: bold;
 }
 .enviar{
-    background-color: var(--secondary-color);
+    background-color: var(--default-color);
     grid-column: 1/4;
     grid-row: 4;
     display: flex;
@@ -825,6 +827,7 @@ form .botao{
         display: flex;
         justify-content: center;
         margin: 0 auto;
+        height: auto;
         
     }
 
