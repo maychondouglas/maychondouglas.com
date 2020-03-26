@@ -232,6 +232,7 @@ header .header_container{
     height: 1rem;
     text-decoration: none;
     color: white;
+	display: none;
     
 }
 .botao{
