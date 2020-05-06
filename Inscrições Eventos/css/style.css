@@ -1,0 +1,232 @@
+/* Inscrições Eventos */
+/* Autor: Gilberto Marques - Co-autor: Maychon Douglas */
+/* @gilbras */
+/* Date: 2020-05-06 */
+/* anhanguera.edu.br */
+
+*, *::before, *::after{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Signika', 'Rubika';
+    color: #666;
+    background-color: #FFFFFF;
+    --primaryColor: #5300BB;
+    --secondaryColor: #6934FF;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+.container{
+    margin: 0 auto;
+    padding: 40px;
+    max-width: 1170px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(12, 1fr);
+}
+.left-column{
+    grid-column: 1/6;
+    
+}
+.right-column{
+    grid-column: 7/-1;
+    
+}
+.btn{
+    font-family: 'Rubik';
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 300px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.btn-primary{
+    color: #FFF;
+    background-color: var(--primaryColor);
+    
+}
+.btn-primary:hover{
+    background-color: var(--secondaryColor);
+    transition: linear 0.1s;
+}
+.btn-secondary{
+    color: var(--primaryColor);
+    background-color: #FFF;
+}
+.btn-secondary:hover{
+    color: #FFF;
+    background-color: var(--primaryColor);
+    transition: linear 0.1s;
+}
+
+/*Header*/
+header{
+    background-color: #FFF;
+}
+.content-left{
+    display: flex;
+    justify-content: flex-start;
+    
+
+}
+.content-right{
+    display: flex;
+    justify-content: flex-end;
+
+
+    
+}
+.title{
+    font-size: 2rem;
+    font-weight: lighter;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+}
+/*Apresentação*/
+.front-presentation{
+    background-color: var(--secondaryColor);
+}
+.identifier-img{
+
+    width: 100%;
+    margin-bottom: -5rem;
+    box-shadow: 3px 7px 8px #666;
+    border-radius: 5px;
+}
+.primary-info{
+    color: #fff;
+    font-family: 'Rubik';
+    display: flex;
+    flex-direction: column;
+    
+}
+.subscribe-date{
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+.main-title{
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+.sub-title1{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.sub-title2{
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 1rem 0;
+    text-transform: uppercase;
+}
+
+
+
+
+
+h3{
+    color: var(--primaryColor);
+    font-size: 2rem;
+    font-family: 'Rubik';
+}
+h4{
+    color: var(--primaryColor);
+    font-size: 1.125rem;
+    font-family: 'Rubik';
+}
+form{
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+
+    width: 100%;
+    
+}
+.text p{
+    font-family: 'Signika';
+    font-size: 1.125rem;
+}
+form label{
+    color: #2F00D8;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+form .caixa{
+    
+    width: 100%;
+    color: var(--primaryColor);
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    font-family: 'Signika';
+    background-color: #5300BB10;
+    
+    height: 50px;
+    border: solid 1px var(--primaryColor);
+    border-radius: 3px;
+    padding-left: 0.6rem;
+}
+form input[type="submit"]{
+    width: 100%;
+    font-size: 1.125rem;
+}
+option{
+    height: 5rem;
+}
+
+/*Footer*/
+footer{
+    position: relative;
+    height: 5rem;
+    bottom: 0;
+    background-color: var(--secondaryColor);
+    opacity: 92%;
+}
+::-webkit-scrollbar{
+    behavior:;
+}
+
+
+@media(max-width: 800px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    .body{
+        font-size: 18px;
+    }
+    .identifier-img{
+        width: 90%;
+        margin: 0 auto;
+        margin-top: -5rem;
+        margin-bottom: 2rem;
+        box-shadow: none;
+
+    }
+    header{
+        height: 15rem;
+    }
+    .superior{
+        align-items: center;
+        margin-top: 0.5rem;
+    }
+    .primary-info{
+        align-items: center;
+        text-align: center;
+    }
+    .about{
+        margin-top: 5rem;
+    }
+}
