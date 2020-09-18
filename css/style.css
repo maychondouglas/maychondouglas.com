@@ -3,23 +3,41 @@
     padding: 0%;
     font-family: 'Signika', sans-serif;
     font-size: 16px;
-    --primary-color: #D9F0FF;
+    --primary-color: #FDFFFC;
     --secondary-color: #CCDBDC;
-    --terceary-color: #46351D;
-    --quartenary-color: #A3D5FF;
-    --default-color: #102542;
+    --terceary-color: #52796F;
+    --quartenary-color: #FE5E41;
+    --default-color: #0c0e0f;
 
+}
+
+@keyframes gira {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.manutencao{
+    display: flex;
+    align-items: center;
+    color: var(--terceary-color);
+}
+.manutencao img{
+    margin: 1rem;
+    height: 100px;
+    width:  100px;
+    animation: gira 5s linear infinite;
+    transform-origin: 50px 50px;
 }
 
 
 body{
     background-color: var(--primary-color);
-    background:  url("/img/background.jpg");
+    background:  url("/img/bg.png");
     background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-size: cover;
+    
     background-color: var(--primary-color);
-
-    background-size: 100% 35rem;
 }
 
 .container{
