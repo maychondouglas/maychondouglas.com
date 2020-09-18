@@ -33,7 +33,7 @@
 
 body{
     background-color: var(--primary-color);
-    background:  url("/img/bg.png");
+    background:  url("/img/bg-min.png");
     background-attachment: fixed;
     background-size: cover;
     
