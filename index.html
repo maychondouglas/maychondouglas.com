@@ -1,253 +1,466 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Signika:300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="./img/icon.ico">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="https://kit.fontawesome.com/fa2a34c5d5.js" crossorigin="anonymous"></script>
-    <title>Maychon Douglas</title>
-</head>
-<body>
-    <div class="apresentacao"> 
-        <div class="container pessoal">
-            <div class="imagem">
-                <img src="/img/maychondouglas.jpg">
-            </div>
-            <div class="descricao"> 
-                <h1>Maychon Douglas</h1>
-                <div class="atribuicoes">
-                    <ul>
-                        <li>
-                            <p>22 anos</p>
-                        </li>
-                        <li>
-                            <p>Aparecidada de Goiânia</p>
-                        </li>
-                        <li>
-                            <p>Estudante de Engenharia da Computação</p>
-                        </li>
-                        <li>
-                            <p>Desenvolvedor</p>
-                        </li>
-                    </ul>
-                    
-                </div>
-                <div class="redes-sociais">
-                    <ul>
-                        <li>
-                            <a href="https://github.com/maychondouglas"><i class="fab fa-github"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://api.whatsapp.com/send?phone=5562984728141&text=Ol%C3%A1%2C%20Maychon%20%3B)"><i class="fab fa-whatsapp"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/maychondouglas/"><i class="fab fa-instagram"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/maychondouglas/"><i class="fab fa-linkedin-in"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <aside class="ideais">
-        
-            <div class="container vertentes_container">
+/*
+    Meu Site de Portfólio
+    Folha de Estilos
+    Autor: Maychon Douglas
+    @maychondouglas
+    06/11/2020
+*/
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Raleway', sans-serif;
 
 
-                <div class="manutencao">
-                    <img src="img/gear.svg" height="100px" alt="">
-                    <div>
-                        <h2>Estou atualizando o meu site.</h2>
-                        <p>Obrigado pela compreensão.</p>
-                    </div>
-                </div>
-              
-
-                    <!--<li class="identificador">
-                        vertentes
-                    </li>
-
-                    <li>
-                        <i class="far fa-file-code"></i>
-                        <section>
-                            <h1>Web</h1>
-                            <p>Criação de Sites Estáticos utilizando HTML, CSS e JavaScript.</p>
-                        </section>
-                    </li>
-                    <li>
-                        <i class="fas fa-desktop"></i>
-                        <section>
-                            <h1>Desktop</h1>
-                            <p>Desenvolvimento utilizando as Linguagens Java e C++. Criação de Interfaces utilizando JavaFX(Java).</p>
-                        </section>
-                    </li>
-                    <li>
-                        <i class="fas fa-mobile-alt"></i>
-                        <section>
-                            <h1>Mobile</h1>
-                            <p>Em aprendizagem da Linguagem Kotlin(JetBrains) utilizando a Ferramenta Android Studio.</p>
-                        </section>
-                    </li>-->
-                </div>
-    </aside>
-    <!--
-    <section class="projetos">
-            
-            <ul class="container lista-de-projetos">
-                <li>
-                        <div class="identificador">
-                                projetos
-                        </div>
-                </li>
-                    
-                <li>
-                        
-                    
-                    <a href="/calculadora-ipv4/index.html" class="projeto">
-                            <div class="descricao-projeto-texto">
-                                    <h2>Calculadora de Rede e Subrede IPV4</h2>
-                                    <p>Com Classe, Sem Classe, Endereço de Rede e Broadcast...</p>
-                            </div>
-                        </a>
-                </li>
-                <li>
-                        <a href="http://projeto2.epizy.com/" class="projeto">
-                                <div class="descricao-projeto-texto">
-                                        <h2>Pesquisa de Avalição</h2>
-                                        <p>Formulário de Pesquisa de Avaliação Simples Utilizando PHP, JS, CSS e HTML.</p>
-                                </div>
-                            </a>
-                    </li>
-                    <li>
-                            <a class="projeto">
-                                <div class="descricao-projeto-texto">
-                                        <h2>Projeto3</h2>
-                                        <p>Lorem ipsum dolor sitat sit accusantium sed consequuntur.</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="projeto">
-                                <div class="descricao-projeto-texto">
-                                        <h2>Projeto4</h2>
-                                        <p>Lorem ipsum dolor sitat sit accusantium sed consequuntur.</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/mais-projetos/index.html" class="botao mais-projetos"> Mais</a>
-                        </li>
-                        
-                        
-            </ul>
-    </section>
+    font-size: 16px;
     
-    <div class="vertentes">
-        <section class="container ideias">
-            <div class="texto1">
-                <div class="icone"> <i class="fas fa-quote-left"></i></div>
-                <div class="outro1">
-                    <h2>Ideiais</h2>
-                    <p>Prezo pelo respeito ao ser humano. Procuro me colocar no lugar do meu próximo para entender e respeitá-lo como semelhante.</p>
-                </div>
-                             </div>
-                    <div class="texto2">
-                            <div class="icone"><i class="fas fa-globe-americas"></i> </div>
-                        <div class="outro2">
-                                <h2>Anseios</h2>
-                                <p>Espero superar expectativas, não só as de terceiros mas as minhas também.</p>
-                        </div>
-                        </div>
-                </section>
-    </div>
-    <aside class="clientes">
-            <div class="lista-de-clientes">
-                <div class="identificador">
-                    clientes
-                </div>
-                
-                <ul>
-                    <li>
-                        <a href="https://www.luzeng.com.br/">
-                            <img src="img/luz-eng-com-borda.png" alt="" width="200px">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            
-    </aside>
-    <div class="galeria-principal">
-        <div class="container galeria">
-                <div class="identificador">
-                        sobre mim
-                    </div>
-                <div class="imagem-com-texto">
-                        <div class="imagem-imagem">
-                                <img src="/img/lado-imagem.svg">
-                        </div>
-                        
-                        <div class="texto-texto">
-                            Gosto de pensar no resultado final, ele é quem me motiva a continuar. Sempre que estou codificando gosto de colocar bem definido o que preciso fazer para chegar ao meu objetivo. É mais fácil e mais funcional.
-                        </div>
-                </div>
-                <div class="imagem1">
-                
-                    <div id="left-mobile" href="#">
-                            <i class="fas fa-chevron-circle-left"></i>
-                    </div>
-                    <div id="right-mobile" href="#">
-                            <i class="fas fa-chevron-circle-right"></i>
-                    </div>
-                        <div class="botoes">
-                            <div id="left" href="#">
-                                <i class="fas fa-chevron-circle-left"></i>
-                            </div>
-                            <div id="right" href="#">
-                                <i class="fas fa-chevron-circle-right"></i>
-                            </div>
-                        </div>
-                </div>
-                <div class="imagem-com-texto2">
-                    <div class="imagem-imagem">
-                            <img src="/img/lado-imagem2.svg">
-                    </div>
-                    
-                    <div class="texto-texto">
-                        Em eventos do meio T.I. sempre se aprende um pouco mais. As diferentes áreas e diferentes idades podem abrir nossos olhos para o novo.
-                        <br>
-                        <span>#voluntárioDevOpsDayGo</span>
-                        <span>#voluntárioBancadaDevops CampusPartyGoiânia</span>
-                    </div>
-            </div>
-                
-        </div>
-    </div>
--->
-    <footer>
-        <form name="contact" method="POST" data-netlify="true" class="container contato">
-            <div class="identificador">
-                    fale comigo
-            </div>
-            
-            <input name="nome" class="campo nome" type="text" placeholder="Digite seu nome...">
-            <input name="email" class="campo email" type="email" placeholder="example@email.com">
-            <input name="telefone" id="telefone" class="campo telefone" type="tel" placeholder="(62) 9 9999-9999">
-            <input name="mensagem" class="campo mensagem" type="text" placeholder="Digite sua mensagem...">
-            <button class="botao enviar" type="submit">Enviar</button>
-        </form>
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1000 1000'%3E%3Cdefs%3E%3CradialGradient id='a' cx='500' cy='500' r='54.2%25' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffffff'/%3E%3Cstop offset='1' stop-color='%23eeeeee'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='500' cy='500' r='73.3%25' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffffff' stop-opacity='1'/%3E%3Cstop offset='1' stop-color='%23ffffff' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1000' height='1000'/%3E%3Cg fill='none' stroke='%238cd1a4' stroke-width='7.6' stroke-miterlimit='10' stroke-opacity='0.14'%3E%3Cpolygon points='-500%2C500 500%2C-500 1500%2C500 500%2C1500'/%3E%3Cpolygon points='-475%2C500 500%2C-475 1475%2C500 500%2C1475'/%3E%3Cpolygon points='-450%2C500 500%2C-450 1450%2C500 500%2C1450'/%3E%3Cpolygon points='-425%2C500 500%2C-425 1425%2C500 500%2C1425'/%3E%3Cpolygon points='-400%2C500 500%2C-400 1400%2C500 500%2C1400'/%3E%3Cpolygon points='-375%2C500 500%2C-375 1375%2C500 500%2C1375'/%3E%3Cpolygon points='-350%2C500 500%2C-350 1350%2C500 500%2C1350'/%3E%3Cpolygon points='-325%2C500 500%2C-325 1325%2C500 500%2C1325'/%3E%3Cpolygon points='-300%2C500 500%2C-300 1300%2C500 500%2C1300'/%3E%3Cpolygon points='-275%2C500 500%2C-275 1275%2C500 500%2C1275'/%3E%3Cpolygon points='-250%2C500 500%2C-250 1250%2C500 500%2C1250'/%3E%3Cpolygon points='-225%2C500 500%2C-225 1225%2C500 500%2C1225'/%3E%3Cpolygon points='-200%2C500 500%2C-200 1200%2C500 500%2C1200'/%3E%3Cpolygon points='-175%2C500 500%2C-175 1175%2C500 500%2C1175'/%3E%3Cpolygon points='-150%2C500 500%2C-150 1150%2C500 500%2C1150'/%3E%3Cpolygon points='-125%2C500 500%2C-125 1125%2C500 500%2C1125'/%3E%3Cpolygon points='-100%2C500 500%2C-100 1100%2C500 500%2C1100'/%3E%3Cpolygon points='-75%2C500 500%2C-75 1075%2C500 500%2C1075'/%3E%3Cpolygon points='-50%2C500 500%2C-50 1050%2C500 500%2C1050'/%3E%3Cpolygon points='-25%2C500 500%2C-25 1025%2C500 500%2C1025'/%3E%3Cpolygon points='0%2C500 500%2C0 1000%2C500 500%2C1000'/%3E%3Cpolygon points='25%2C500 500%2C25 975%2C500 500%2C975'/%3E%3Cpolygon points='50%2C500 500%2C50 950%2C500 500%2C950'/%3E%3Cpolygon points='75%2C500 500%2C75 925%2C500 500%2C925'/%3E%3Cpolygon points='100%2C500 500%2C100 900%2C500 500%2C900'/%3E%3Cpolygon points='125%2C500 500%2C125 875%2C500 500%2C875'/%3E%3Cpolygon points='150%2C500 500%2C150 850%2C500 500%2C850'/%3E%3Cpolygon points='175%2C500 500%2C175 825%2C500 500%2C825'/%3E%3Cpolygon points='200%2C500 500%2C200 800%2C500 500%2C800'/%3E%3Cpolygon points='225%2C500 500%2C225 775%2C500 500%2C775'/%3E%3Cpolygon points='250%2C500 500%2C250 750%2C500 500%2C750'/%3E%3Cpolygon points='275%2C500 500%2C275 725%2C500 500%2C725'/%3E%3Cpolygon points='300%2C500 500%2C300 700%2C500 500%2C700'/%3E%3Cpolygon points='325%2C500 500%2C325 675%2C500 500%2C675'/%3E%3Cpolygon points='350%2C500 500%2C350 650%2C500 500%2C650'/%3E%3Cpolygon points='375%2C500 500%2C375 625%2C500 500%2C625'/%3E%3Cpolygon points='400%2C500 500%2C400 600%2C500 500%2C600'/%3E%3Cpolygon points='425%2C500 500%2C425 575%2C500 500%2C575'/%3E%3Cpolygon points='450%2C500 500%2C450 550%2C500 500%2C550'/%3E%3Cpolygon points='475%2C500 500%2C475 525%2C500 500%2C525'/%3E%3C/g%3E%3Crect fill-opacity='0.14' fill='url(%23b)' width='1000' height='1000'/%3E %3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    
+    /*colors*/
+    --primary-color: #303030ff; /*Footer*/
+    --secondary-color: #8cd1a4ff; /*Botoes*/
+    --quartenary-color: #eeeeeeff; /*Text Presentation*/
+    --fifth-color: #a5a6a9ff; /*Ícones Social-Medias*/
+    --sixth-color: #20232aff; /*Texto*/
 
+    /*Text Sizes*/
+    --low-text: 1.025rem;
+    --med-text: 1.5rem;
+    --high-text: 2rem;
+    --hyper-high-text: 2.5rem;
+}
+ul{ list-style: none; }
+a{ text-decoration: none; }
 
-        
-    </footer>
-    <section class="rodape">
-        <p> Desenvolvido por mim mesmo ;)</p>
-    </section>
-</body>
-<script type="text/javascript" src="js/javascript.js"></script>
-</html>
+h1, h2, h3, h4, h5, h6 { line-height: 1.2em; }
+h1{ font-size:  var(--hyper-high-text); }
+h2{ font-size:  var(--high-text); }
+h3{ font-size:  var(--med-text); font-weight: 300; }
+h4{ font-size:  var(--low-text); }
+p{ 
+    font-size: var(--low-text);
+    line-height: 1.8rem;
+}
+.top-bar a{
+    text-decoration: none;
+    transition: ease-in-out 0.3s;
+}
+header a:hover{
+    color: #fff;
+}
+.container{
+    max-width: 900px;
+    margin: 0 auto;
+}
+.col-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.col-3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+header{
+    background-image: url('../img/background.jpg');
+    background-position: top;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+    height: 100vh;
+    color: var(--quartenary-color);
+}
+header::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    background-color: #000;
+    opacity: 0.6 ;
+}
+.top-bar{
+    height: 10%;
+    align-items: end;
+}
+nav, .presentation-page{
+    position: relative;
+    z-index: 3;
+}
+.my-name{
+    color: var(--quartenary-color);
+    font-weight: 600;
+}
+.main-menu{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    position: initial;
+}
+.main-menu li{
+    margin-left: 0.5rem;
+}
+.main-menu li a{
+    text-decoration: none;
+    padding: 0.5rem;
+    color: var(--quartenary-color);
+}
+.social-medias{
+    height: 4rem;
+}
+.social-medias a{
+    margin: 0.5rem;
+}
+.social-medias a svg{
+    fill: var(--fifth-color);
+    border-radius: 5px;
+    transition: ease-in-out 0.3s;
+}
+.social-medias a:hover svg{
+    fill: var(--quartenary-color);
+}
+.presentation-page{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+}
+.presentation-page .presentation-text{
+    height: 20rem;
+}
+footer{
+    background-color: var(--primary-color);
+    height: 15vh;
+    color: var(--terceary-color) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--quartenary-color);
+}
+.about-section{
+    background-color: #fff;
+}
+section .container{
+    padding: 5rem 0;
+
+}
+.about-section .container{
+
+    color: var(--sixth-color);
+}
+.about-section .container p{
+    margin-bottom: 1rem;
+}
+.section-identifier{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.section-extern .content{
+    background-color: #fff;
+    height: auto;
+    padding: 2rem;
+    width: 80%;
+    text-align: justify;
+    margin: 0 auto;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.12);
+    -moz-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.12);
+    box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.12);
+    position: relative;
+}
+.repos-list{
+    padding-top: 3rem;
+    transition: ease 1s;
+}
+.favorites-list{
+    transition: ease 1s;
+    
+}
+.hide{
+    height: 0;
+    opacity: 0;
+    display: none;
+}
+.show{
+    height: auto;
+    opacity: 1;
+    display: initial;
+    
+}
+
+.project{
+  margin-top: 1rem;
+  
+}
+.project a{
+  overflow: hidden;
+  
+  display: flex;
+  justify-content: center;
+  
+  
+}
+.project .project-title{
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  color: var(--secondary-color);
+  transition: ease-in-out 0.3s;
+}
+.project:hover  > .project-title{
+  color: var(--primary-color);
+}
+
+.project a img{
+  border-radius: 7px;
+  opacity: 0;
+  width: 20%;
+  height: 0;
+  justify-self: center;
+  
+  transition: 0.2s ease-in-out;
+}
+.ocultar{
+  display: none;
+}
+/*Botões*/
+.btn{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 3px transparent;
+    border-radius: 3px;
+    grid-column: span 1;
+    transition: ease-in-out 0.2s;
+    width: 100%;
+    font-weight: 600;
+}
+.btn-primary{
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+.btn-primary:hover{
+    margin-top: -0.2rem;
+    margin-bottom: 0.2rem;
+    -webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.12);
+    -moz-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.12);
+    box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.12);
+}
+
+/*Grid Profile*/
+.user-picture{
+    grid-column: span 1;
+    grid-row: 1;
+    transition: ease-in-out 0.3s;
+    width: 70%;
+    border-radius: 100%;
+}
+.profile-link{
+    grid-column: span 1;
+    grid-row: 2;
+    width: 70%;
+    text-align: center;
+    color: var(--primary-color);
+
+}
+.btn-primary{
+    grid-column: span 1;
+    grid-row: 2;
+}
+.info-user{
+    grid-column: span 2;
+    grid-row: 1;
+}
+.info-user h4{
+    line-height: 2rem;
+}
+
+/*Respositories Section*/
+h4{
+    margin-bottom: 1rem;
+}
+.user-github{
+    margin-bottom: 3rem;
+}
+.list-repo li{
+    line-height: 2rem;
+    display: flex;
+    padding: 0 0.5rem;
+}
+.list-repo li a{
+    color: #0b2c15ff;
+    margin: 0.2rem 0;
+    width: 100%;
+    transition: ease-in-out 0.3s;
+}
+.list-repo li a:hover{
+    color: var(--secondary-color);
+}
+.list-repo li:nth-child(odd){
+    background-color: #ccebdbff;
+}
+
+/*Menu Mobile*/
+#check {
+    position: absolute;
+    z-index: 1000000000000;
+    display: none;
+}
+.menu-mobile-botao{
+    height: 45px;
+    width: 45px;
+    border: solid var(--quartenary-color) 2px;
+    border-radius: 3px;
+    display: none;
+}
+.menu-mobile-botao label {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all .2s linear;
+}
+.menu-mobile-botao span {
+    width: 25px;
+    height: 2px;
+    top: 20px;
+    left: 7px;
+    position: absolute;
+    background-color: var(--quartenary-color);
+    transition: all .2s linear;
+}
+.menu-mobile-botao span:before {
+    content: '';
+    width: 25px;
+    height: 2px;
+    bottom: -10px;
+    position: absolute;
+    background-color: var(--quartenary-color);
+    transition: all .2s linear;
+}
+.menu-mobile-botao span:after {
+    content: '';
+    width: 25px;
+    height: 2px;
+    top: -10px;
+    position: absolute;
+    background-color: var(--quartenary-color);
+    transition: all .2s linear;
+}
+
+@media(max-width: 900px){
+    .container{
+        padding: 1rem 3rem;
+        position: relative;
+    }
+    section .container, .section-extern .container, footer{
+        padding: 3rem 3rem;
+        position: relative;
+    }
+    footer{
+        text-align: center;
+    }
+    .user-github{
+        display: flex;
+        flex-direction: column;
+    }
+    .user-picture{
+        align-self: center;
+    }
+    .profile-link{
+        width: 100%;
+    }
+    .my-name{
+        line-height: 45px;
+    }
+    .section-extern .content{
+        width: 100%;
+    }
+
+    /*Menu Mobile*/
+    .top-bar{
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1000;
+        width: 100%;
+        transition: ease-in-out 0.3s;
+    }
+    .top-bar-scroll{
+        background-color: var(--secondary-color);
+    }
+    .menu-mobile-botao{
+        transition: 0.30s ease-in-out;
+        right: 3rem;
+    }
+    .main-menu{
+        position: absolute;
+        right: -50%;
+        top: 0;
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        height: 100vh;
+        width: 50%;
+        transition: ease-in-out 0.3s;
+    }
+    .main-menu li{
+        margin: 2rem;
+    }
+    .botao-menu-deslizado{
+        background-color: var(--fifth-color);
+        padding-left: 0;
+        right: 0;
+        margin-right: 50% ;
+        border-radius:  100px 0rem  0rem 100px ;
+    }
+    .menu-mobile-botao {
+        display: block;
+    }
+    .fechar-menu-mobile{
+        display: flex;
+        color: var(--clean-color);
+        height: 10%;
+        width: auto;
+        justify-content: flex-end;
+        cursor: pointer;
+    }
+    #check:checked ~ label span{
+        background-color: transparent;
+    }
+    #check:checked ~ label span:before{
+        transform: translate(0px, -10px) rotate(-45deg);
+    }
+    #check:checked ~ label span::after{
+        transform: translate(0px, 10px) rotate(45deg);
+    }
+    #check:checked ~ label{
+        border-radius: 100px;
+    }
+    #check:checked ~ .menu{
+        margin-right: 0;
+    }
+    #check:blank ~ .menu{
+        margin-right: -10%;
+    }
+    .project{
+      margin: 1rem 0;
+    }
+    
+    .project-title h4{
+      max-width: 90%;
+      text-align: left;
+    }
+}
